@@ -29,7 +29,9 @@ func readURLDatabase(filename string) (map[string]entry, error) {
 			return nil, err
 		}
 		e := entry{url: record[1]}
-		fmt.Sscanf(record[2], "%d", &e.visited)
+		public := 0
+		fmt.Sscanf(record[2], "%d", &public)
+		e.public = public != 0
 		entries[record[0]] = e
 	}
 }

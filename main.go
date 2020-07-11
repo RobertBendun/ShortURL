@@ -6,12 +6,13 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"time"
 )
 
 /*
 csv file format:
-short_postfix,url,visits
+short_postfix,url,public
+
+public field - zero is private, non-zero is public
 
 example:
 wiki,https://bendun.cc/wiki,0
@@ -40,5 +41,4 @@ func main() {
 
 	fmt.Println("Listening at port: ", listener.Addr().(*net.TCPAddr).Port)
 	go log.Fatal(http.Serve(listener, nil))
-	go updateURLDatabase(*csvFilename, time.NewTicker(30*time.Minute))
 }
