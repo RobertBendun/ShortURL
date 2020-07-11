@@ -7,4 +7,5 @@ Running server without options leads to random port and `urls.csv` file for URL 
 - `-csv-file [path]` to set source of url's and their short identifiers.
 
 ### Customisation
-Edit `html.go` file to modify public html code.
+- Edit `html.go` file to modify public html code.
+- Edit variable `defaultURL` in `main.go` to change URL which is used when server will not found provided identifer 

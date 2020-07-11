@@ -19,6 +19,7 @@ wiki,https://bendun.cc/wiki,0
 */
 
 const csvURLDatabaseFilename = "urls.csv"
+const defaultURL = "https://bendun.cc/"
 
 func main() {
 	csvFilename := flag.String("csv-file", csvURLDatabaseFilename, "Source of URLs and their short identifiers.")
